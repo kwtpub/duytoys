@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DYU TOYS - Art Toys by Dmitry Dyu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-bottom: 1px solid #dee2e6;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.3s ease;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .logo:hover {
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        .logo-img {
+            height: 90px;
+            width: auto;
+            max-width: 360px;
+            object-fit: contain;
+        }
+
+        .cart-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.75rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: #333;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cart-btn:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            transform: scale(1.05);
+        }
+
+        .cart-icon {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .cart-count {
+            background-color: #dc3545;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            position: absolute;
+            top: 0.25rem;
+            right: 0.25rem;
+        }
+
+        .cart-count.hidden {
+            display: none;
+        }
+
+        .placeholder {
+            width: 60px; /* Примерная ширина корзины для баланса */
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 0.75rem;
+                min-height: 60px;
+            }
+
+            .logo-img {
+                height: 70px;
+            }
+
+            .cart-btn {
+                font-size: 1.25rem;
+                padding: 0.5rem;
+            }
+
+            .cart-icon {
+                width: 20px;
+                height: 20px;
+            }
+
+            .placeholder {
+                width: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 0.5rem;
+                min-height: 50px;
+            }
+
+            .logo-img {
+                height: 55px;
+                max-width: 200px;
+            }
+
+            .cart-btn {
+                font-size: 1.1rem;
+                padding: 0.5rem;
+            }
+
+            .cart-icon {
+                width: 18px;
+                height: 18px;
+            }
+
+            .placeholder {
+                width: 40px;
+            }
+
+            .cart-count {
+                width: 16px;
+                height: 16px;
+                font-size: 0.65rem;
+                top: 0.2rem;
+                right: 0.2rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .header-container {
+                padding: 0 0.25rem;
+                min-height: 45px;
+            }
+
+            .logo-img {
+                height: 45px;
+                max-width: 150px;
+            }
+
+            .cart-btn {
+                padding: 0.4rem;
+            }
+
+            .cart-icon {
+                width: 16px;
+                height: 16px;
+            }
+
+            .placeholder {
+                width: 35px;
+            }
+        }
+
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* Фокус для доступности */
+        .cart-btn:focus {
+            outline: 2px solid #007bff;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="placeholder"></div>
+            
+            <a href="/" class="logo" aria-label="DYU TOYS - Главная страница">
+                <img src="logo1.png" alt="DYU TOYS" class="logo-img">
+            </a>
+
+            <button class="cart-btn" aria-label="Корзина" onclick="openCart()">
+                <img src="card.png" alt="Корзина" class="cart-icon">
+                <span class="cart-count hidden">0</span>
+            </button>
+        </div>
+    </header>
+
+    <script>
+        // Функция открытия корзины
+        function openCart() {
+            // Здесь будет логика открытия корзины
+            console.log('Открытие корзины');
+            alert('Корзина (функция в разработке)');
+        }
+
+        // Обновление количества товаров в корзине
+        function updateCartCount(count) {
+            const cartCount = document.querySelector('.cart-count');
+            if (count > 0) {
+                cartCount.textContent = count;
+                cartCount.classList.remove('hidden');
+            } else {
+                cartCount.classList.add('hidden');
+            }
+        }
+
+        // Пример добавления товара в корзину
+        function addToCart() {
+            const currentCount = parseInt(document.querySelector('.cart-count').textContent) || 0;
+            updateCartCount(currentCount + 1);
+        }
+
+        // Инициализация корзины
+        updateCartCount(0);
+    </script>
+</body>
+</html>
