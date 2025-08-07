@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Копия каталога Tyler Thompson</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;700&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: white;
       margin: 0;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-family: 'IBM Plex Sans', sans-serif;
     }
     .catalog-container {
         
@@ -87,13 +89,13 @@
       z-index: 10;
       padding: 2px 8px;
       background: transparent;
-      color: #556b2f;
-      font-family: inherit;
+      color: #000;
+      font-family: 'IBM Plex Sans', sans-serif;
       font-weight: 700;
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      border: 1px solid #556b2f;
+
       border-radius: 0;
       pointer-events: none;
       opacity: 1;
@@ -108,7 +110,7 @@
       display: block;
     }
     .catalog-card-title {
-      font-family: inherit;
+      font-family: 'IBM Plex Sans', sans-serif;
       font-weight: 700;
       font-size: 1rem;
       margin-bottom: 4px;
@@ -137,7 +139,7 @@
       color: #556b2f;
     }
     .catalog-card-descr {
-      font-family: inherit;
+      font-family: 'IBM Plex Sans', sans-serif;
       font-size: 0.85rem;
       color: #000;
       opacity: 0.6;
@@ -152,7 +154,7 @@
       gap: 8px;
     }
     .catalog-card-price {
-      font-family: inherit;
+      font-family: 'IBM Plex Sans', sans-serif;
       font-weight: 200;
       font-size: 0.85rem;
       color: #000;
@@ -164,7 +166,7 @@
     padding-top: 10px;
     }
     .catalog-card-price-old {
-      font-family: inherit;
+      font-family: 'IBM Plex Sans', sans-serif;
       font-weight: 400;
       font-size: 0.85rem;
       color: #000;
@@ -204,29 +206,12 @@
   <div id="catalog-copy" class="catalog-container">
     <div id="no-products" style="display:none;"></div>
   </div>
-  <div id="catalog-loading-overlay" style="position:fixed;z-index:9999;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(250,255,251,0.96);backdrop-filter:blur(2px);font-family:JetBrains Mono,monospace;font-size:1.2rem;color:#556b2f;transition:opacity 0.3s;">
-    <div style="padding:32px 48px;border:2px solid #556b2f;border-radius:12px;background:#fff;box-shadow:0 4px 24px 0 rgba(85,107,47,0.08);text-align:center;">
+  <div id="catalog-loading-overlay" style="position:fixed;z-index:9999;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(250,255,251,0.96);backdrop-filter:blur(2px);font-family:'IBM Plex Sans',sans-serif;font-size:1.2rem;transition:opacity 0.3s;">
+    <div style="padding:32px 48px;;border-radius:12px;background:#fff;;text-align:center;">
       <div style="position:relative;width:120px;height:90px;margin:0 auto 16px auto;">
-        <img id="mountain-loader-img" src='https://res.cloudinary.com/dhx2rvn4s/image/upload/v1746469478/montain_desctop_yi3hhw.png' alt='mountain' style='width:120px;height:90px;object-fit:cover;display:block;border-radius:8px;filter:brightness(0.97) contrast(1.1);'/>
+        <img id="mountain-loader-img" src='https://optim.tildacdn.pub/tild3735-3934-4861-b531-326664613131/-/format/webp/logo-2.png.webp' alt='mountain' style='width:120px;height:90px;object-fit:cover;display:block;border-radius:8px;filter:brightness(0.97) contrast(1.1);'/>
       </div>
-      <div style="
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-        font-weight: 700;
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: #556b2f;
-        background: #fafffb;
-        border: 2px solid #556b2f;
-        border-radius: 8px;
-        padding: 12px 28px;
-        margin: 0 auto;
-        box-shadow: 0 4px 16px 0 rgba(85,107,47,0.08);
-        display: inline-block;
-        margin-bottom: 0;
-      ">
-        ЗАГРУЗКА КАТАЛОГА...
-      </div>
+
     </div>
   </div>
   <script>
@@ -259,13 +244,12 @@
         const emptyMsg = document.createElement('div');
         emptyMsg.textContent = 'ТОВАРЫ ОТСУТСВУЮТ';
         emptyMsg.style.cssText = `
-          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+          font-family: 'IBM Plex Sans', sans-serif;
           font-weight: 700;
           font-size: 1.05rem;
           text-transform: uppercase;
           letter-spacing: 0.08em;
-          color: #556b2f;
-          background: #fafffb;
+          color: #333;
           padding: 20px 32px;
           margin: 64px auto 28vh auto;
           display: block;
