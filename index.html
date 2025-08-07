@@ -21,7 +21,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: white;
             border-bottom: 1px solid #dee2e6;
             position: sticky;
             top: 0;
@@ -56,7 +56,7 @@
         }
 
         .logo-img {
-            height: 90px;
+            height: 180px;
             width: auto;
             max-width: 360px;
             object-fit: contain;
@@ -81,29 +81,42 @@
             gap: 0;
         }
 
-        .cart-btn:hover {
+        .cart-btn {
+            background: black;
+            border: none;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            color: white;
+            position: absolute;
+            right: 0;
+            left: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
-        .cart-icon {
-            width: 24px;
-            height: 24px;
-            object-fit: contain;
+        .cart-text {
+            color: white;
+            font-weight: 500;
         }
 
         .cart-count {
             background-color: #dc3545;
             color: white;
             border-radius: 50%;
-            width: 14px;
-            height: 14px;
+            width: 18px;
+            height: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.60rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            position: absolute;
-            top: 2px;
-            right: 10px;
         }
 
         .cart-count.hidden {
@@ -126,24 +139,13 @@
                 left: auto;
                 top: 50%;
                 transform: translateY(-50%);
-                font-size: 1.25rem;
-                padding: 0.5rem;
-                gap: 0;
+                font-size: 0.8rem;
+                padding: 6px 12px;
+                gap: 6px;
             }
 
             .logo-img {
                 height: 100px;
-            }
-
-            .cart-btn {
-                font-size: 1.25rem;
-                padding: 0.5rem;
-                gap: 0;
-            }
-
-            .cart-icon {
-                width: 32px;
-                height: 32px;
             }
 
             .placeholder {
@@ -151,9 +153,9 @@
             }
 
             .cart-count {
-                width: 12px;
-                height: 12px;
-                font-size: 0.55rem;
+                width: 16px;
+                height: 16px;
+                font-size: 0.6rem;
             }
         }
 
@@ -169,13 +171,9 @@
             }
 
             .cart-btn {
-                font-size: 1.1rem;
-                padding: 0.5rem;
-            }
-
-            .cart-icon {
-                width: 28px;
-                height: 28px;
+                font-size: 0.7rem;
+                padding: 5px 10px;
+                gap: 5px;
             }
 
             .placeholder {
@@ -183,9 +181,9 @@
             }
 
             .cart-count {
-                width: 10px;
-                height: 10px;
-                font-size: 0.48rem;
+                width: 14px;
+                height: 14px;
+                font-size: 0.5rem;
             }
         }
 
@@ -201,18 +199,18 @@
             }
 
             .cart-btn {
-                padding: 0.4rem;
-            }
-
-            .cart-icon {
-                width: 26px;
-                height: 26px;
+                font-size: 0.65rem;
+                padding: 4px 8px;
+                gap: 4px;
             }
 
             .placeholder {
                 width: 35px;
             }
         }
+        .t706__carticon_showed {
+    display: none;
+}
 
         /* Анимации */
         @keyframes fadeIn {
@@ -384,52 +382,14 @@
             </a>
             <div>
             <button class="cart-btn" aria-label="Корзина">
-                <img src="https://optim.tildacdn.pub/tild3536-3864-4661-a662-323965653434/-/format/webp/card.png.webp" alt="Корзина" class="cart-icon">
+                <span class="cart-text">CART</span>
                 <span class="cart-count">0</span>
-                <span class="cart-price"></span>
             </button>
             </div>
         </div>
     </header>
 
-    <main class="catalog">
-        <div class="catalog-container">
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/300x400/f0f0f0/666?text=Product+1" alt="Product 1">
-                        <div class="sold-out">SOLD OUT</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Product Name 1</h3>
-                        <p class="product-price">€63,95</p>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/300x400/f0f0f0/666?text=Product+2" alt="Product 2">
-                        <div class="sold-out">SOLD OUT</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Product Name 2</h3>
-                        <p class="product-price">€50,95</p>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/300x400/f0f0f0/666?text=Product+3" alt="Product 3">
-                        <div class="sold-out">SOLD OUT</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Product Name 3</h3>
-                        <p class="product-price">€92,95</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+    
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
