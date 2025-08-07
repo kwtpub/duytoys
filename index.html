@@ -36,7 +36,6 @@
             padding: 0 1rem;
             display: flex;
             align-items: center;
-            justify-content: center;
             min-height: 70px;
             position: relative;
         }
@@ -74,6 +73,7 @@
             color: #333;
             position: absolute;
             right: 0;
+            left: auto;
             top: 50%;
             transform: translateY(-50%);
             display: flex;
@@ -121,10 +121,14 @@
                 position: static;
             }
             .cart-btn {
-                position: static;
-                top: auto;
-                right: auto;
-                transform: none;
+                position: absolute;
+                right: 0;
+                left: auto;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 1.25rem;
+                padding: 0.5rem;
+                gap: 0;
             }
 
             .logo-img {
@@ -254,14 +258,15 @@
             <div class="placeholder"></div>
             
             <a href="/" class="logo" aria-label="DYU TOYS - Главная страница">
-                <img src="logo.png" alt="DYU TOYS" class="logo-img">
+                <img src="logo-2.png" alt="DYU TOYS" class="logo-img">
             </a>
-
+            <div>
             <button class="cart-btn" aria-label="Корзина">
                 <img src="card.png" alt="Корзина" class="cart-icon">
                 <span class="cart-count">0</span>
                 <span class="cart-price"></span>
             </button>
+            </div>
         </div>
     </header>
 
