@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Копия каталога Tyler Thompson</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;700&display=swap">
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    .catalog-container {
+        
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 16px 56px 16px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(140px, 1fr));
+      gap: 8px;
+    }
+    @media (min-width: 640px) {
+      .catalog-container {
+        padding: 56px 32px 72px 32px;
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+        gap: 12px;
+      }
+    }
+    @media (min-width: 768px) {
+      .catalog-container {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+        gap: 16px;
+        padding: 72px 48px 96px 48px;
+      }
+    }
+    @media (min-width: 1024px) {
+      .catalog-container {
+        grid-template-columns: repeat(3, minmax(220px, 1fr));
+        gap: 20px;
+        padding: 96px 64px 120px 64px;
+      }
+      .catalog-card-img-wrap {
+        aspect-ratio: 1/1.18;
+      }
+    }
+    .catalog-card {
+      background: #fff;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s;
+      min-width: 0;
+      font-family: inherit;
+    }
+    .catalog-card:hover {
+      box-shadow: 0 4px 12px -1px rgba(0,0,0,0.13), 0 2px 8px -2px rgba(0,0,0,0.13);
+    }
+    .catalog-card-img-wrap {
+      width: 100%;
+      aspect-ratio: 1/1;
+      background: #fff;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+    }
+    .catalog-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.3s;
+      display: block;
+      border-radius: 8px;
+    }
+    .catalog-card:hover .catalog-card-img {
+      transform: scale(1.04);
+    }
+    .catalog-card-soldout {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 10;
+      padding: 2px 8px;
+      background: transparent;
+      color: #556b2f;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border: 1px solid #556b2f;
+      border-radius: 0;
+      pointer-events: none;
+      opacity: 1;
+    }
+    .catalog-card-img.soldout {
+
+    }
+    .catalog-card-content {
+      padding: 20px 20px 20px 20px;
+      background: transparent;
+      flex: 0 0 auto;
+      display: block;
+    }
+    .catalog-card-title {
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: #000;
+      letter-spacing: 0.01em;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    @media (max-width: 640px) {
+      .catalog-card-title {
+        font-size: 0.75rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-all;
+        line-height: 1.2;
+      }
+    }
+    .catalog-card-title-link {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .catalog-card-title-link:hover {
+      color: #556b2f;
+    }
+    .catalog-card-descr {
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: #000;
+      opacity: 0.6;
+      margin-bottom: 8px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .catalog-card-price-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .catalog-card-price {
+      font-family: inherit;
+      font-weight: 200;
+      font-size: 0.85rem;
+      color: #000;
+    }
+    .catalog-card-price-old {
+    padding-top: 10px;
+}
+    .catalog-card-price {
+    padding-top: 10px;
+    }
+    .catalog-card-price-old {
+      font-family: inherit;
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: #000;
+      opacity: 0.6;
+      text-decoration: line-through;
+    }
+    @media (max-width: 640px) {
+      .catalog-card-price, .catalog-card-price-old {
+        font-size: 0.7rem;
+      }
+      .catalog-card-descr {
+        font-size: 0.7rem;
+      }
+      .catalog-card-img-wrap {
+        aspect-ratio: 1/1;
+      }
+    }
+    @keyframes mountain-shake {
+      0% { transform: rotate(-2deg) scale(1.01); }
+      10% { transform: rotate(2deg) scale(1.02); }
+      20% { transform: rotate(-2deg) scale(1.01); }
+      30% { transform: rotate(2deg) scale(1.02); }
+      40% { transform: rotate(-1deg) scale(1.01); }
+      50% { transform: rotate(1deg) scale(1.01); }
+      60% { transform: rotate(-1deg) scale(1.01); }
+      70% { transform: rotate(1deg) scale(1.01); }
+      80% { transform: rotate(-2deg) scale(1.01); }
+      90% { transform: rotate(2deg) scale(1.02); }
+      100% { transform: rotate(-2deg) scale(1.01); }
+    }
+    #mountain-loader-img {
+      animation: mountain-shake 1.2s infinite linear;
+    }
+  </style>
+</head>
+<body>
+  <div id="catalog-copy" class="catalog-container">
+    <div id="no-products" style="display:none;"></div>
+  </div>
+  <div id="catalog-loading-overlay" style="position:fixed;z-index:9999;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(250,255,251,0.96);backdrop-filter:blur(2px);font-family:JetBrains Mono,monospace;font-size:1.2rem;color:#556b2f;transition:opacity 0.3s;">
+    <div style="padding:32px 48px;border:2px solid #556b2f;border-radius:12px;background:#fff;box-shadow:0 4px 24px 0 rgba(85,107,47,0.08);text-align:center;">
+      <div style="position:relative;width:120px;height:90px;margin:0 auto 16px auto;">
+        <img id="mountain-loader-img" src='https://res.cloudinary.com/dhx2rvn4s/image/upload/v1746469478/montain_desctop_yi3hhw.png' alt='mountain' style='width:120px;height:90px;object-fit:cover;display:block;border-radius:8px;filter:brightness(0.97) contrast(1.1);'/>
+      </div>
+      <div style="
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+        font-weight: 700;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #556b2f;
+        background: #fafffb;
+        border: 2px solid #556b2f;
+        border-radius: 8px;
+        padding: 12px 28px;
+        margin: 0 auto;
+        box-shadow: 0 4px 16px 0 rgba(85,107,47,0.08);
+        display: inline-block;
+        margin-bottom: 0;
+      ">
+        ЗАГРУЗКА КАТАЛОГА...
+      </div>
+    </div>
+  </div>
+  <script>
+    // Функция для получения данных из оригинального каталога
+    function getCatalogData() {
+      const catalog = document.querySelector('#rec1207049136 .js-store-grid-cont');
+      if (!catalog) return [];
+      const cards = Array.from(catalog.querySelectorAll('.js-product.t-store__card'));
+      return cards.map(card => {
+        const name = card.querySelector('.js-store-prod-name')?.textContent?.trim() || '';
+        const descr = card.querySelector('.js-store-prod-descr')?.textContent?.trim() || '';
+        const price = card.querySelector('.js-product-price')?.textContent?.trim() || '';
+        const priceOld = card.querySelector('.js-store-prod-price-old-val')?.textContent?.trim() || '';
+        const img = card.querySelector('.js-product-img')?.getAttribute('data-original') || '';
+        const soldOut = !!card.querySelector('.js-store-prod-sold-out');
+        const url = card.getAttribute('data-product-url') || '';
+        return { name, descr, price, priceOld, img, soldOut, url };
+      });
+    }
+
+    // Функция для рендера каталога
+    function renderCatalog(data) {
+      const noProducts = document.getElementById('no-products');
+      const catalog = document.getElementById('catalog-copy');
+      const overlay = document.getElementById('catalog-loading-overlay');
+      if (overlay) overlay.style.display = 'none';
+      if (data.length === 0) {
+        noProducts.style.display = 'block';
+        noProducts.innerHTML = '';
+        const emptyMsg = document.createElement('div');
+        emptyMsg.textContent = 'ТОВАРЫ ОТСУТСВУЮТ';
+        emptyMsg.style.cssText = `
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+          font-weight: 700;
+          font-size: 1.05rem;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: #556b2f;
+          background: #fafffb;
+          padding: 20px 32px;
+          margin: 64px auto 28vh auto;
+          display: block;
+          text-align: center;
+          max-width: 340px;
+        `;
+        noProducts.appendChild(emptyMsg);
+        // Очищаем каталог
+        catalog.innerHTML = '';
+        catalog.appendChild(noProducts);
+        return;
+      } else {
+        noProducts.style.display = 'none';
+        noProducts.innerHTML = '';
+      }
+      data.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'catalog-card group';
+        card.innerHTML = `
+          <div class="catalog-card-img-wrap">
+            <a href="${item.url}" tabindex="-1" style="display:block;width:100%;height:100%"><img class="catalog-card-img${item.soldOut ? ' soldout' : ''}" src="${item.img}" alt="${item.name}"></a>
+            ${item.soldOut ? '<span class="catalog-card-soldout">SOLD OUT</span>' : ''}
+          </div>
+          <div class="catalog-card-content">
+            <div class="catalog-card-title"><a class="catalog-card-title-link" href="${item.url}" >${item.name}</a></div>
+            <div class="catalog-card-descr">${item.descr}</div>
+            <div class="catalog-card-price-wrapper">
+              <span class="catalog-card-price${item.soldOut ? ' line-through opacity-60' : ''}">${item.price} <span style='font-weight:400'>₽</span></span>
+              ${item.priceOld ? `<span class="catalog-card-price-old">${item.priceOld} <span style='font-weight:400'>₽</span></span>` : ''}
+            </div>
+          </div>
+        `;
+        catalog.appendChild(card);
+      });
+    }
+
+    // Ждём загрузки DOM и оригинального каталога, затем копируем данные
+    let catalogTimeout;
+    function tryRenderCatalog(startTs = Date.now()) {
+      const data = getCatalogData();
+      if (data.length > 0) {
+        clearTimeout(catalogTimeout);
+        renderCatalog(data);
+      } else if (Date.now() - startTs > 5000) {
+        renderCatalog([]);
+      } else {
+        catalogTimeout = setTimeout(() => tryRenderCatalog(startTs), 500);
+      }
+    }
+    // Показываем overlay при старте
+    document.getElementById('catalog-loading-overlay').style.display = 'flex';
+    tryRenderCatalog();
+  </script>
+</body>
+</html> 

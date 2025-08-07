@@ -1,7 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DYU TOYS - Footer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: #333;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            right: 20px;
+            height: 1px;
+            background-color: #dee2e6;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-left {
+            width: 200px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-right {
+            width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .footer-logo-img {
+            height: 90px;
+            width: auto;
+        }
+
+        .footer-logo-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .footer-social {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+       
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .footer-left,
+            .footer-right {
+                width: auto;
+                justify-content: center;
+            }
+
+            .footer-logo {
+                justify-content: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer {
+                padding: 20px 15px;
+                border-radius: 15px 15px 0 0;
+            }
+
+            .footer-logo-img {
+                height: 90px;
+            }
+
+            .footer-logo-text {
+                font-size: 1rem;
+            }
+
+            .footer-copyright {
+                font-size: 0.8rem;
+            }
+
+            .social-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="/" class="footer-logo">
+                    <img src="https://optim.tildacdn.pub/tild3735-3934-4861-b531-326664613131/-/format/webp/logo-2.png.webp" alt="DYU TOYS" class="footer-logo-img">
+                </a>
+            </div>
+            
+            <div class="footer-copyright">
+                Copyright 2024© DYU TOYS
+            </div>
+            
+            <div class="footer-right">
+                <div class="footer-social">
+                    <a href="#" class="social-icon telegram" aria-label="Telegram">
+                        <img src="https://optim.tildacdn.pub/tild3863-6636-4336-b335-386265363361/-/format/webp/telegram.png.webp" alt="Telegram" width="19" height="19">
+                    </a>
+                    <a href="#" class="social-icon instagram" aria-label="Instagram">
+                        <img src="https://optim.tildacdn.pub/tild3962-3831-4065-a563-343563383634/-/format/webp/instagram.png.webp" alt="Instagram" width="16" height="16">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
