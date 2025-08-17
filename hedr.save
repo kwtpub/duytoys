@@ -90,7 +90,8 @@
             transition: all 0.3s ease;
             color: white;
             position: absolute;
-            right: 60px;
+            right: 0;
+            left: auto;
             top: 50%;
             transform: translateY(-50%);
             display: flex;
@@ -122,41 +123,6 @@
             display: none;
         }
 
-        .menu-btn {
-            background: black;
-            border: none;
-            cursor: pointer;
-            padding: 8px 12px;
-            border-radius: 0;
-            transition: all 0.3s ease;
-            color: white;
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-right: 0.5rem;
-        }
-
-        .menu-btn:hover {
-            background: #333;
-        }
-
-        .contact-icon {
-            width: 20px;
-            height: 20px;
-            filter: brightness(0) invert(1);
-            transition: all 0.3s ease;
-        }
-
-        .menu-btn:hover .contact-icon {
-            filter: brightness(0) invert(0.8);
-        }
-
         .placeholder {
             width: 60px; /* Примерная ширина корзины для баланса */
         }
@@ -169,27 +135,14 @@
             }
             .cart-btn {
                 position: absolute;
-                right: 60px;
+                right: 0;
+                left: auto;
                 top: 50%;
                 transform: translateY(-50%);
                 font-size: 0.8rem;
                 padding: 6px 12px;
                 gap: 6px;
                 margin-right: 10px;
-            }
-
-            .menu-btn {
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                padding: 6px 10px;
-                margin-right: 10px;
-            }
-
-            .contact-icon {
-                width: 18px;
-                height: 18px;
             }
 
             .logo-img {
@@ -435,9 +388,6 @@
             <button class="cart-btn" aria-label="Корзина">
                 <span class="cart-text">КОРЗИНА</span>
                 <span class="cart-count">(0)</span>
-            </button>
-            <button class="menu-btn" aria-label="Контакты" onclick="window.location.href='/contact'">
-                <img src="https://optim.tildacdn.com/tild3535-3262-4930-b165-656132363833/-/format/webp/support.png.webp" alt="Контакты" class="contact-icon">
             </button>
             </div>
         </div>
