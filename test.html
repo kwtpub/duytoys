@@ -1,0 +1,25 @@
+Родительский контейнер для .t706__cartwin-top:
+
+.products-fixed-list
+
+Структура:
+.products-fixed-list
+├── .t706__cartwin-top
+├── .t706__cartwin-products  
+└── .t706__cartwin-bottom
+
+Этот контейнер создается динамически через jQuery:
+$('.t706__cartwin-top, .t706__cartwin-products, .t706__cartwin-bottom').wrapAll('<div class="products-fixed-list"></div>');
+
+---
+
+Переписанный скрипт для редиректа на /card:
+
+```javascript
+document.querySelectorAll('.cart-btn').forEach(el => {
+    el.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = '/card';
+    });
+});
+```

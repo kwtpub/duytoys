@@ -1,0 +1,370 @@
+<style> 
+
+    #rec845176188 {
+        opacity: 1;
+        margin-top: 50px;
+    }
+    .t706__cartwin-top {
+        border: 0px solid black !important;
+    }
+    .t706__cartwin-bottom {
+        border-top: 1px solid rgb(229, 231, 235) !important;
+    }
+    .t706__form-upper-text.t-descr.t-descr_xs {
+        font-weight: 700 !important;
+        font-size: 1.25rem !important;
+        line-height: 1.75rem !important;
+        font-family: "Baloo 2", sans-serif !important;
+        margin-bottom: 2rem;
+    }
+    .t-input-title {
+        color: #000000;
+        font-weight: 700  !important;
+        font-size: .75rem  !important;
+        line-height: 1rem  !important;
+        font-family: "Baloo 2", sans-serif  !important;
+    }
+    
+    .t706__cartwin-heading.t-name.t-name_xl {
+        font-weight: 700 !important;
+        font-size: 1.25rem !important;
+        line-height: 1.75rem !important;
+        font-family: "Baloo 2", sans-serif !important;
+    }
+    
+    .t-input {
+        color: #000000;
+        border: none;
+        transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        transition-duration: .15s;
+        font-family: "IBM Plex Sans", sans-serif;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        background-color: transparent;
+
+    }
+    .t-input:focus {
+        border-color: rgb(85 107 47 / 1) !important;
+        outline: 2px solid transparent;
+    outline-offset: 2px;
+    }
+    
+    /* Поле ввода телефона на мобильных */
+    @media (max-width: 768px) {
+        .t-input.t-input-phonemask {
+            display: block !important;
+            width: 100% !important;
+        }
+    }
+    
+    /* Десктопная версия */
+    @media (min-width: 769px) {
+        .products-fixed-list {
+            width: 55% !important;
+        }
+    }
+    
+    .t-submit {
+        transition-duration: .2s !important;
+        transition-property: color,background-color,border-color,text-decoration-color,fill,stroke !important;
+        transition-timing-function: cubic-bezier(.4,0,.2,1) !important;
+        letter-spacing: .1em !important;
+        text-transform: uppercase !important;
+        font-weight: 700 !important;
+        font-family: "Baloo 2", sans-serif !important;
+        padding-top: .75rem !important;
+        padding-bottom: .75rem !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        border: 2px solid #000000 !important;
+    }
+    
+    .t706__cartwin-prodamount-wrap.t-descr.t-descr_sm {
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+    
+    .t706__cartwin-prodamount-label {
+        color: black;
+        font-weight: 700;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        font-family: "Baloo 2", sans-serif;
+    }
+    
+    .t706__cartwin-prodamount-price {
+        font-weight: 300;
+        font-size: 1rem;
+        line-height: 1.75rem;
+        font-family: "IBM Plex Sans", sans-serif;
+    }
+    .t706__cartwin-prodamount-currency {
+        font-family: "IBM Plex Sans", sans-serif;
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+    .t706__cartwin-prodamount-currency {
+        font-family: "IBM Plex Sans", sans-serif !important;
+        font-size: 1rem !important;
+        line-height: 1.75rem !important;
+        font-weight: 500;
+    }
+    
+    .t706__product-minus {
+        color: black;
+        opacity: 1;
+        font-weight: 700;
+        font-family: "Baloo 2", sans-serif;
+        font-size: 1rem;
+        height: auto !important;
+        width: auto !important;
+        border: 1px solid black;
+        padding: 0 5px;
+    }
+    
+    .t706__product-plus { 
+        color: black;
+        opacity: 1;
+        font-weight: 700;
+        font-family: "Baloo 2", sans-serif;
+        font-size: 1rem;
+        height: auto !important;
+        width: auto !important;
+        border: 1px solid black;
+        padding: 0 5px;
+    }
+    
+    .t706__product-quantity { 
+        color: black;
+        opacity: 1;
+        font-weight: 700;
+        font-family: "Baloo 2", sans-serif;
+        font-size: 1rem;
+        
+    }
+    
+    .delivery-full-address.t-descr {
+        opacity: 1;
+        display: none !important;
+    }
+    
+    .t-form__errorbox-item.js-rule-error.js-rule-error-string {
+        display: block;
+        display: none;
+    }
+    .t706__cartwin-top {
+        padding: 0 !important;
+    }
+    .js-errorbox-all.t-form__errorbox-wrapper {
+        display: none !important;
+    }
+    
+    .t-inputpromocode__btn.t-btn.t-btn_md {
+        display: table-cell;
+        position: relative;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        border: 2px solid #000000 !important;
+        font-family: "Baloo 2", sans-serif;
+        font-size: 100%;
+        height: auto;
+    }
+    
+    .t706__product-title__option {
+        opacity: .6;
+        font-size: .75rem;
+        line-height: 1rem;
+        font-family: "IBM Plex Sans", sans-serif;
+    }
+    .t706__product-title__option {
+        font-size: 14px;
+    }
+    
+    .t-submit.t706__submit_disable {
+        color: #ffffff;
+        background-color: #000000;
+        height: auto;
+        padding-top: .75rem !important;
+        padding-bottom: .75rem !important;
+        letter-spacing: .1em !important;
+    }
+    .t706__cartwin-totalamount-info { 
+    
+        display:none !important;
+    }
+    
+    @media screen and (max-width:640px) {
+        .t706__product-amount {
+            display: flex;
+            padding: 0 0 0 0;
+            width: auto;
+            flex-direction: row;
+            justify-content: end;
+            position: relative !important;
+            bottom: 75px !important;
+            right: -34px;
+        }
+    }
+    
+    .t706__product-imgdiv {
+        border-radius: 0px !important;
+    }
+    
+    @media screen and (max-width:640px) {
+        .t706__product {
+    
+            margin: 25px 0;
+    
+        }
+    }
+    @media screen and (min-width:640px) {
+    
+    .cstm-btn { 
+    right: 70px !important
+    } }
+    
+      @media screen and (max-width: 360px) { 
+        .t706__product-amount { 
+            bottom: 95px !important;
+        }
+          
+      }
+    </style>
+    
+    <script>
+    function formatCurrency() {
+      // 1. Замена "Сумма: " на "Сумма"
+      const sumLabel = document.querySelector('.t706__cartwin-prodamount-label');
+      if (sumLabel && sumLabel.textContent.includes('Сумма: ')) {
+        sumLabel.textContent = 'Сумма';
+      }
+    
+    
+      // Возвращаем true, если оба элемента найдены
+      return sumLabel !== null;
+    }
+    
+    // Проверяем, есть ли элементы на странице сразу
+    if (formatCurrency()) {
+      console.log('Текст и валюта обновлены!');
+    } else {
+      // Если элементов нет, ждём их появления через MutationObserver
+      const observer = new MutationObserver((mutations, obs) => {
+        if (formatCurrency()) {
+          console.log('Текст и валюта обновлены после загрузки!');
+          obs.disconnect();  // Останавливаем наблюдение
+        }
+      });
+    
+      // Начинаем наблюдать за изменениями в DOM
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    
+      // Автоматически отключаемся через 10 секунд (на всякий случай)
+      setTimeout(() => {
+        observer.disconnect();
+        console.log('Observer остановлен (элементы не найдены)');
+      }, 10000);
+    }
+    
+    
+    </script>
+    
+    
+    <script>
+        function replaceIconsWithSymbols() {
+      // Находим элементы с иконками
+      const minusIcon = document.querySelector('.t706__product-minus img');
+      const plusIcon = document.querySelector('.t706__product-plus img');
+      
+      // Заменяем минус
+      if (minusIcon) {
+        minusIcon.replaceWith('-'); // Просто вставляем текстовый символ
+      }
+      
+      // Заменяем плюс
+      if (plusIcon) {
+        plusIcon.replaceWith('+');
+      }
+    }
+    
+    // Запускаем сразу (если элементы уже есть)
+    replaceIconsWithSymbols();
+    
+    // Если элементы подгружаются динамически (например, после AJAX)
+    const observer = new MutationObserver((mutations) => {
+      replaceIconsWithSymbols();
+    });
+    
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+    
+    // Остановка через 10 сек (если не нужно бесконечное наблюдение)
+    setTimeout(() => observer.disconnect(), 10000);
+    </script>
+    
+    <script>
+     function replaceAllDeleteIcons() {
+      // Находим ВСЕ иконки удаления
+      const deleteIcons = document.querySelectorAll('.t706__product-del img');
+      let replacedCount = 0;
+    
+      deleteIcons.forEach(deleteIcon => {
+        // Создаем текстовый элемент "Удалить"
+        const textElement = document.createElement('span');
+        textElement.textContent = 'Удалить';
+        textElement.className = 'cstm-btn'; 
+        textElement.style.cssText = `
+          position: relative;
+          right: 35px;
+          top: 30px;
+          color: rgb(68 84 41);
+          transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+          transition-timing-function: cubic-bezier(.4,0,.2,1);
+          transition-duration: .15s;
+          font-size: .75rem;
+          line-height: 1rem;
+          font-family: "IBM Plex Sans", sans-serif;
+          opacity: 1;
+          cursor: pointer;
+        `;
+        
+        // Заменяем иконку на текст
+        deleteIcon.replaceWith(textElement);
+        replacedCount++;
+        
+        // Опционально: обрабатываем родительский элемент
+        const wrapper = deleteIcon.closest('.t706__product-del-wrapper');
+        if (wrapper) {
+          wrapper.style.padding = '15px 10px 15px 15px';
+          wrapper.style.width = 'auto';
+        }
+      });
+    
+      return replacedCount > 0;
+    }
+    
+    // Пытаемся выполнить сразу
+    if (!replaceAllDeleteIcons()) {
+      // Если элементы еще не загружены, используем MutationObserver
+      const observer = new MutationObserver((mutations) => {
+        replaceAllDeleteIcons();
+      });
+      
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+      
+      // Останавливаем через 10 секунд
+      setTimeout(() => observer.disconnect(), 10000);
+    }
+    </script>
+    
+    
+    

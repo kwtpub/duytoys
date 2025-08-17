@@ -21,7 +21,7 @@
         }
 
         .header {
-            background: white;
+            background: #f8f9fa;
             border-bottom: 1px solid #dee2e6;
             position: sticky;
             top: 0;
@@ -371,6 +371,9 @@
                 height: 300px;
             }
         }
+        .t706__cartwin-content {
+            display: block !important;
+        }
     </style>
 </head>
 <body>
@@ -435,14 +438,12 @@
         }
 
         // Открытие корзины по клику
-        document.querySelectorAll('.cart-btn').forEach(el => {
-            el.addEventListener('click', function(e) {
-                e.preventDefault();
-                if (typeof window.tcart__openCart === 'function') {
-                    window.tcart__openCart();
-                }
-            });
-        });
+document.querySelectorAll('.cart-btn').forEach(el => {
+    el.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = '/card';
+    });
+});
     });
     </script>
 </body>
